@@ -4,7 +4,6 @@
 /* সাধারণ বডি স্টাইল */
 body {
     font-family: 'Inter', sans-serif; /* Inter Font */
-    background-color: #f3f4f6;
     margin: 0;
     padding: 0;
     color: #101828; /* Default text color */
@@ -14,7 +13,7 @@ body {
 .ai-section {
     padding: 3rem 0;
     width: 100%;
-    background: linear-gradient(to right, #f0fdf4, #ffffff);
+    background: #fff;
 }
 
 .ai-container {
@@ -35,9 +34,10 @@ body {
 /* মেইন কার্ড ডিজাইন */
 .ai-card {
     background-color: #ffffff;
-    border: 1px solid #bbf7d0;
-    border-radius: 1rem;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-radius: 15px;
+    box-shadow: 0px 5px 10px -3px rgba(0,0,0,0.41);
+    -webkit-box-shadow: 0px 5px 10px -3px rgba(0,0,0,0.41);
+    -moz-box-shadow: 0px 5px 10px -3px rgba(0,0,0,0.41);
     overflow: hidden;
 }
 
@@ -54,12 +54,11 @@ body {
     .ai-header { padding: 1.5rem; }
 }
 
-/* HEADING STYLES (User Requested) */
 .ai-title {
-    font-size: 16px;          /* Requested: 16px */
-    font-weight: bold;        /* Requested: bold */
-    font-family: "Inter", sans-serif; /* Requested: Inter */
-    color: #ffffff;           /* Keeping white for contrast on green bg */
+    font-size: 16px;         
+    font-weight: bold;       
+    font-family: "Inter", sans-serif; 
+    color: #ffffff;
     display: flex;
     align-items: center;
     margin: 0;
