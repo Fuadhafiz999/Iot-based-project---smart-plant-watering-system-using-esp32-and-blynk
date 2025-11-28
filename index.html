@@ -6,6 +6,7 @@
     <title>IoT Based Plant Watering System Using ESP32 and Blynk</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="css/ai.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -25,6 +26,9 @@
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">হোম</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#ai_qa">প্ল্যান্ট কেয়ার এসিস্ট্যান্ট</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#idea">ধারণা</a>
@@ -63,7 +67,7 @@
                         </div>
                         <div class="ban_text_btn">
                             <a href="#how_it_works" class="ban_text_btn_details">বিস্তারিত দেখুন</a>
-                            <a href="#" class="ban_text_btn_components">কম্পোনেন্টগুলো দেখুন</a>
+                            <a href="#components" class="ban_text_btn_components">কম্পোনেন্টগুলো দেখুন</a>
                         </div>
                     </div>
                     <div class="ban_img">
@@ -77,6 +81,60 @@
     </div>
 </section>
     <!-- hero section end -->
+    <!-- ai start -->
+<section class="ai-section" id="ai_qa">
+    <div class="ai-container">
+        <div class="ai-card">
+            <!-- Header -->
+            <div class="ai-header">
+                <h2 class="ai-title">
+                    <span class="ai-icon-emoji">✨</span> AI প্ল্যান্ট অ্যাসিস্ট্যান্ট
+                </h2>
+                <span class="ai-badge">Powered by Squadxtech</span>
+            </div>
+            
+            <div class="ai-body">
+                <p class="ai-description">
+                    আপনার গাছের যত্ন নিয়ে কোনো প্রশ্ন আছে? অথবা কোন গাছের জন্য কতটুকু ময়েশ্চার লেভেল সেট করবেন জানতে চান? নিচে আপনার প্রশ্ন লিখুন, আমাদের AI আপনাকে সাহায্য করবে।
+                </p>
+
+                <!-- Chat Interface -->
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <label for="userQuery" class="ai-label">আপনার প্রশ্ন:</label>
+                        <textarea id="userQuery" rows="3" class="ai-textarea" placeholder="উদাহরণ: আমার গোলাপ গাছের পাতা হলুদ হয়ে যাচ্ছে, কি করব?"></textarea>
+                    </div>
+                    <!-- NEW: Image Upload Input -->
+                    <div class="input-wrapper">
+                        <label for="imageInput" class="ai-label">ছবি যুক্ত করুন (অপশনাল):</label>
+                        <input type="file" id="imageInput" accept="image/*" class="ai-file-input">
+                    </div>
+                    
+                    <div class="btn-container">
+                        <button onclick="askAI()" id="askBtn" class="ai-btn">
+                            <span id="btnText">জিজ্ঞাসা করুন</span>
+                            <!-- Icon -->
+                            <svg id="btnIcon" class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            <!-- Loader -->
+                            <div id="loader" class="loader hidden"></div>
+                        </button>
+                    </div>
+
+                    <!-- Response Area -->
+                    <div id="responseArea" class="ai-response-area hidden">
+                        <div class="ai-response-bar"></div>
+                        <h3 class="ai-response-title">
+                            <svg class="response-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                            সমাধান:
+                        </h3>
+                        <div id="aiResponse" class="ai-response-text"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- ai end -->
 
     <!-- idea section start -->
 <section id="idea">
@@ -582,9 +640,9 @@
                                 <ul>
                                     <li><a href="https://www.facebook.com/ahshan.hafiz.com.bd"><i class="fa-brands fa-facebook"></i></a></li>
                                     <li><a href="https://wa.me/01954691305" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
+                                    <li><a href="https://ahshan-hafiz-fuad.netlify.app/"><i class="fa-solid fa-globe"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/ahshan-hafiz-fuad-2466111a4/"><i class="fa-brands fa-linkedin"></i></a></li>
+                                    <li><a href="https://github.com/Fuadhafiz999"><i class="fa-brands fa-github"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -596,21 +654,18 @@
                     </div>
                     <div class="we_tile">
                         <div class="we_tile_img">
-                            <img src="images/team/fuad2.jpg" alt="">
+                            <img src="images/team/khadimul.jpeg" alt="">
                             <div class="we_tile_image_overlay">
                                 <ul>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
+                                    <li><a href="https://www.facebook.com/khadimul.islam.840768"><i class="fa-brands fa-facebook"></i></a></li>
+                                    <li><a href="https://wa.me/01791306295" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="we_tile_details">
                             <h2>খাদিমুল ইসলাম</h2>
                             <h3>কম্পিউটার ডিপার্টমেন্ট (৬ষ্ঠ)</h3>
-                            <p>৭৫৩৬০৫ | ১৫০২২৭৬৩৯২</p>
+                            <p>৭৫৩৫৯৮ | ১৫০২২৭৬---</p>
                         </div>
                     </div>
                     <div class="we_tile">
@@ -620,6 +675,7 @@
                                 <ul>
                                     <li><a href="https://www.facebook.com/femas.sorwar.3"><i class="fa-brands fa-facebook"></i></a></li>
                                     <li><a href="https://wa.me/+8801619923032" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/sahjadul-islam-178902392/"><i class="fa-brands fa-linkedin"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -647,21 +703,18 @@
                     </div>
                     <div class="we_tile">
                         <div class="we_tile_img">
-                            <img src="images/team/fuad2.jpg" alt="">
+                            <img src="images/team/rifat.jpg" alt="">
                             <div class="we_tile_image_overlay">
                                 <ul>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
+                                    <li><a href="https://www.facebook.com/md.rifat.201278"><i class="fa-brands fa-facebook"></i></a></li>
+                                    <li><a href="https://wa.me/+8801790051097" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="we_tile_details">
                             <h2>মোঃ রিফাত ইসলাম</h2>
                             <h3>কম্পিউটার ডিপার্টমেন্ট (৬ষ্ঠ)</h3>
-                            <p>৭৫৩৬০৫ | ১৫০২২৭৬৩৯২</p>
+                            <p>৭৫৩৬৫৬ | ১৫০২২৭৬৩৩৮</p>
                         </div>
                     </div>
                     <div class="we_tile">
@@ -688,7 +741,7 @@
                             <img src="images/team/parvej rana.png" alt=""> 
                             <div class="we_tile_image_overlay">
                                 <ul>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                                    <li><a href="https://www.facebook.com/share/17T1t37Ut3/"><i class="fa-brands fa-facebook"></i></a></li>
                                     <li><a href="https://wa.me/+8801590064525" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
                                 </ul>
                             </div>
@@ -854,9 +907,9 @@
                         <div class="footer_link">
                             <ul>
                                 <li><a href="#">হোম</a></li>
-                                <li><a href="#">ধারণা</a></li>
-                                <li><a href="#">কাজ করার পদ্ধতি</a></li>
-                                <li><a href="#">ব্যবহার ক্ষেত্র</a></li>
+                                <li><a href="#idea">ধারণা</a></li>
+                                <li><a href="#how_it_works">কাজ করার পদ্ধতি</a></li>
+                                <li><a href="#use_case">ব্যবহার ক্ষেত্র</a></li>
                             </ul>
                         </div> 
                     </div>
@@ -868,10 +921,9 @@
                         </div>
                         <div class="footer_link">
                             <ul>
-                                <li><a href="#">কম্পোনেন্টস</a></li>
-                                <li><a href="#">আমাদের সম্পর্কে</a></li>
-                                <li><a href="#">ডকুমেন্টেশন</a></li>
-                                <li><a href="#">সাপোর্ট</a></li>
+                                <li><a href="#components">কম্পোনেন্টস</a></li>
+                                <li><a href="#about_us">আমাদের সম্পর্কে</a></li>
+                                <li><a href="#ai_qa">প্ল্যান্ট কেয়ার এসিস্ট্যান্ট</a></li>
                             </ul>
                         </div>
                     </div>
@@ -883,9 +935,9 @@
                         </div>
                         <div class="footer_icon">
                             <ul>
-                                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
+                                <li><a href="https://www.facebook.com/ahshan.hafiz.com.bd"><i class="fa-brands fa-facebook"></i></a></li>
+                                <li><a href="https://wa.me/01954691305" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                <li><a href="https://github.com/Fuadhafiz999"><i class="fa-brands fa-github"></i></a></li>
                             </ul>
                         </div>
                         <div class="footer_details">
@@ -907,14 +959,7 @@
 
 
 
-
-
+<script src="js/ai.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
-
 </html>
-
-
-
-
-
