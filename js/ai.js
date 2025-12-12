@@ -40,10 +40,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Enter বাটন চাপলে askAI() কল হবে
     if (queryInput) {
         queryInput.addEventListener('keypress', function (e) {
-            // যদি Enter চাপা হয় এবং Shift চাপা না থাকে (Shift+Enter দিয়ে নতুন লাইন হয়)
             if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault(); // ডিফল্ট নতুন লাইন তৈরি করা বন্ধ করুন
-                askAI(); // ফাংশনটি কল করুন
+                e.preventDefault(); 
+                askAI();
             }
         });
     }
@@ -65,19 +64,12 @@ function fileToBase64(file) {
 
 async function askAI() {
     // 1. API Key Setup:
-    const apiKey = "AIzaSyC-6fUvbR4C1U30gfxE-_HX8ai40c4CERE"; 
-
-    // Validation: API key bosano hoyeche kina check korbe
-    if (apiKey === "YOUR_API_KEY_HERE" || apiKey === "") {
-        alert('অনুগ্রহ করে ai.js ফাইলে আপনার Gemini API Key টি বসান।');
-        return;
-    }
+    const apiKey = "AIzaSyBN3uDug8n4wqAtf-Tw0kiFrYOQEWuQCy8"; 
 
     const queryInput = document.getElementById('userQuery');
     const imageInput = document.getElementById('imageInput'); // ইমেজের ইনপুট ধরা হলো
     const query = queryInput.value;
     
-    // যদি টেক্সট এবং ছবি দুটোর কোনোটিই না থাকে
     if (!query.trim() && (!imageInput.files || imageInput.files.length === 0)) {
         alert('অনুগ্রহ করে আপনার প্রশ্নটি লিখুন অথবা গাছের ছবি দিন।');
         return;
@@ -173,9 +165,5 @@ async function askAI() {
         btnText.textContent = 'জিজ্ঞাসা করুন';
         btnIcon.classList.remove('hidden');
         loader.classList.add('hidden');
-        
-        // ইনপুট ক্লিয়ার করার অপশন (ঐচ্ছিক)
-        // queryInput.value = '';
-        // imageInput.value = '';
     }
 }
