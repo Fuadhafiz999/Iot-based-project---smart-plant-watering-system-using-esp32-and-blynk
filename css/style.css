@@ -131,7 +131,6 @@ a {
 .nav-item:hover a{
     background: #00A63E;
     color: #fff !important;
-    border-radius: 5%;
 }
 /* menu end */
 
