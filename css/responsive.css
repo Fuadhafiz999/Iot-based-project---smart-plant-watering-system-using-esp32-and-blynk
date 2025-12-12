@@ -1,0 +1,1361 @@
+/* responsive css start */
+
+
+@media (max-width: 576px) {
+
+    /* Styles for extra small devices (phones) */
+    /* common css start */
+    .section_header {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 50px;
+
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+            font-family: "Hind Siliguri", sans-serif;
+            color: #000;
+            margin-bottom: 16px;
+        }
+
+        p {
+            font-size: 12px;
+            font-weight: normal;
+            font-family: "Hind Siliguri", sans-serif;
+            color: #4A5565;
+        }
+    }
+
+    /* common css end */
+
+
+    /* nav start */
+    .navbar-brand img {
+        width: 170px;
+    }
+
+    /* nav end */
+
+
+    /* banner start */
+    .ban_wrapper {
+        flex-wrap: wrap;
+    }
+
+    .ban_text_main {
+        padding-top: 25px;
+        width: 100%;
+    }
+
+    .ban_text_catagory {
+        text-align: center;
+    }
+
+    .ban_text_btn {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .ban_text_btn_details,
+    .ban_text_btn_components {
+        font-size: 12px;
+        padding: 10px 18px;
+        border-radius: 18px
+    }
+
+    .ban_img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .ban_text_catagory p {
+        padding: 5px 10px;
+        font-size: 12px;
+        border-radius: 30px;
+    }
+
+    .ban_text_main {
+        padding-top: 15px;
+    }
+
+    .ban_text_main h3 {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .ban_text_main p {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    .ban_text_btn {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .ban_text_btn_details,
+    .ban_text_btn_components {
+        font-size: 12px;
+        padding: 10px 18px;
+        border-radius: 18px
+    }
+
+    .ban_img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    /* banner end */
+
+    /* idea start */
+    .idea_txt,
+    .idea_img {
+        width: 100%;
+    }
+
+    .idea_txt_main {
+        padding-right: 0px;
+
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .idea_txt_key_points {
+        margin-right: 0px;
+    }
+
+    .idea_txt_key_points_tiles {
+        width: 100%;
+    }
+
+    .idea_txt_key_points_tiles_details p {
+        font-size: 12px;
+    }
+
+    .idea_img {
+        margin: 50px 0;
+        justify-content: center;
+    }
+
+    .idea_img img {
+        width: 100%;
+    }
+
+    /* idea end */
+
+    /* how its work start */
+    .hiw_proccess_tiles {
+        width: 100%;
+        margin-bottom: 20px;
+
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .hiw_system_arch_main_header h3 {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .hiw_system_arch_main_tiles_details {
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .hiw_system_arch_img {
+        width: 100%;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    /* how its work end */
+    /* use case start */
+    .use_case_tile_wrapper {
+        justify-content: center;
+    }
+
+    .use_case_tile {
+        width: 80%;
+    }
+
+    /* use case end */
+
+    /* component start */
+    .component_tiles {
+        justify-content: center;
+    }
+
+    .component_tile {
+        width: 90%;
+        margin-bottom: 30px;
+    }
+
+    .component_tile_header {
+        h3 {
+            font-size: 14px;
+        }
+    }
+
+    .component_key_feature_main_header {
+        h3 {
+            font-size: 14px;
+        }
+    }
+
+    .component_tile_mini_details {
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .component_key_feture_tile_details {
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .component_key_feture_tile {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    /* component end */
+    /* about us start */
+    .abt_wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .abt_main {
+        width: 100%;
+        padding-right: 0px;
+    }
+
+    .abt_main_img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .abt_main_text {
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+            padding-bottom: 20px;
+        }
+    }
+
+    .abt_main_text_tile_icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .abt_main_text_tile {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .abt_us_img {
+        /* Dimensions to fit the side column */
+        width: 100%;
+        position: relative;
+        /* Optional: ensures it doesn't shrink in a tight flex row */
+        flex-shrink: 0;
+    }
+
+    /* about us end */
+    /* our team start */
+    .we_wrapper {
+        justify-content: center;
+        padding: 0px 0;
+    }
+
+    .we_tile {
+        width: 80%;
+    }
+
+    .we_tile_img {
+        display: flex;
+        justify-content: center;
+    }
+
+    .we_tile_img img {
+        width: 60%;
+    }
+
+    .we_tile_image_overlay {
+        bottom: 10px;
+        left: 25%;
+        transform: translateX(-25%);
+    }
+
+    .we_tile_details {
+        text-align: center;
+
+        h2 {
+            font-size: 12px;
+        }
+
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+            padding-bottom: 16px;
+        }
+    }
+
+    /* our team end */
+    /* contact us start */
+    .contact_tiles {
+        justify-content: center;
+        margin: 50px 0;
+    }
+
+    .contact_tile {
+        width: 90%;
+        margin-bottom: 30px;
+    }
+
+    .contact_tile_details,
+    .contact_header {
+        h3 {
+            font-size: 12px;
+            font-weight: bold;
+            font-family: "Hind Siliguri", sans-serif;
+            margin-bottom: 30;
+        }
+
+        p {
+            font-size: 12px;
+            font-weight: normal;
+            font-family: "Hind Siliguri", sans-serif;
+        }
+    }
+
+    /* contact us end */
+    /* footer start */
+    .footer_wrapper {
+        text-align: center;
+    }
+
+    .footer_icon ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* footer end */
+
+
+
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+
+    /* Styles for small devices (tablets) */
+    /* common css start */
+    .section_header {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 50px;
+
+        h2 {
+            font-size: 22px;
+            font-weight: bold;
+            font-family: "Hind Siliguri", sans-serif;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: normal;
+            font-family: "Hind Siliguri", sans-serif;
+            color: #4A5565;
+        }
+    }
+
+    /* common css end */
+
+    /* nav start */
+    .navbar-brand img {
+        width: 170px;
+    }
+
+    /* nav end */
+
+
+    /* banner start */
+
+    .ban_text_main {
+        padding-top: 25px;
+        width: 70%;
+    }
+
+    .ban_text_catagory p {
+        padding: 5px 10px;
+        font-size: 12px;
+        border-radius: 30px;
+    }
+
+    .ban_text_main {
+        padding-top: 15px;
+    }
+
+    .ban_text_main h3 {
+        font-size: 12px;
+    }
+
+    .ban_text_main p {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    .ban_text_btn {
+        margin-top: 30px;
+    }
+
+    .ban_text_btn_components {
+        margin-left: 5px;
+    }
+
+    .ban_text_btn_details,
+    .ban_text_btn_components {
+        font-size: 12px;
+        padding: 10px 18px;
+        border-radius: 18px
+    }
+
+    /* Slider Window */
+    .slider_wrapper {
+        height: 200px;
+        width: 200px;
+    }
+
+    .ban_img {
+        width: 100%;
+        margin-top: 50px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    /* banner end */
+    /* idea start */
+    .idea_txt,
+    .idea_img {
+        width: 100%;
+    }
+
+    .idea_txt_main {
+        padding-right: 0px;
+
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .idea_txt_key_points {
+        margin-right: 0px;
+    }
+
+    .idea_txt_key_points_tiles {
+        width: 48%;
+    }
+
+    .idea_txt_key_points_tiles_details p {
+        font-size: 12px;
+    }
+
+    .idea_img {
+        margin: 50px 0;
+        justify-content: center;
+    }
+
+    .idea_img img {
+        width: 100%;
+    }
+
+    /* idea end */
+    /* how its work start */
+    .hiw_proccess_tiles {
+        width: 48%;
+        margin-bottom: 20px;
+
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .hiw_system_arch_main_header h3 {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .hiw_system_arch_main_tiles_details {
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .hiw_system_arch_img {
+        width: 100%;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    /* how its work end */
+    /* use case start */
+    .use_case_tile_wrapper {
+        justify-content: center;
+    }
+
+    .use_case_tile {
+        width: 80%;
+    }
+
+    /* use case end */
+    /* component start */
+    .component_tiles {
+        justify-content: center;
+    }
+
+    .component_tile {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .component_tile_header {
+        h3 {
+            font-size: 14px;
+        }
+    }
+
+    .component_tile_mini_details {
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .component_key_feature_main_header {
+        h3 {
+            font-size: 14px;
+        }
+    }
+
+    .component_tile_mini_details {
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .component_key_feture_tile_details {
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .component_key_feture_tile {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    /* component end */
+    /* about us start */
+    .abt_wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .abt_main {
+        width: 100%;
+        padding-right: 0px;
+    }
+
+    .abt_main_img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .abt_main_text {
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+            padding-bottom: 20px;
+        }
+    }
+
+    .abt_main_text_tile_icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .abt_main_text_tile {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .abt_us_img {
+        /* Dimensions to fit the side column */
+        width: 100%;
+        position: relative;
+        /* Optional: ensures it doesn't shrink in a tight flex row */
+        flex-shrink: 0;
+    }
+
+    /* about us end */
+    /* our team start */
+    .we_wrapper {
+        justify-content: space-between;
+        padding: 0px 0;
+    }
+
+    .we_tile {
+        width: 48%;
+    }
+
+    .we_tile_img {
+        display: flex;
+        justify-content: center;
+    }
+
+    .we_tile_img img {
+        width: 100%;
+    }
+
+    .we_tile_details {
+        text-align: center;
+
+        h2 {
+            font-size: 12px;
+        }
+
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+            padding-bottom: 16px;
+        }
+    }
+
+    /* our team end */
+    /* contact us start */
+    .contact_tiles {
+        justify-content: center;
+        margin: 50px 0;
+    }
+
+    .contact_tile {
+        width: 90%;
+        margin-bottom: 30px;
+    }
+
+    .contact_tile_details,
+    .contact_header {
+        h3 {
+            font-size: 12px;
+            font-weight: bold;
+            font-family: "Hind Siliguri", sans-serif;
+            margin-bottom: 30;
+        }
+
+        p {
+            font-size: 12px;
+            font-weight: normal;
+            font-family: "Hind Siliguri", sans-serif;
+        }
+    }
+
+    /* contact us end */
+    /* footer start */
+    .footer_wrapper {
+        text-align: center;
+    }
+
+    .footer_icon ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* footer end */
+}
+
+
+@media (min-width: 769px) and (max-width: 992px) {
+
+    /* Styles for medium devices (laptops) */
+    /* common css start */
+    .section_header {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 50px;
+
+        h2 {
+            font-size: 26px;
+            font-weight: bold;
+            font-family: "Hind Siliguri", sans-serif;
+            color: #000;
+            margin-bottom: 24px;
+        }
+
+        p {
+            font-size: 20px;
+            font-weight: normal;
+            font-family: "Hind Siliguri", sans-serif;
+            color: #4A5565;
+        }
+    }
+
+    /* common css end */
+
+    /* nav start */
+    .navbar-brand img {
+        width: 200px;
+    }
+
+    /* nav end */
+
+
+    /* banner start */
+
+    .ban_text_main {
+        padding-top: 25px;
+        width: 70%;
+    }
+
+    .ban_text_catagory p {
+        padding: 5px 10px;
+        font-size: 12px;
+        border-radius: 30px;
+    }
+
+    .ban_text_main {
+        padding-top: 15px;
+    }
+
+    .ban_text_main h3 {
+        font-size: 12px;
+    }
+
+    .ban_text_main p {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    .ban_text_btn {
+        margin-top: 30px;
+    }
+
+    .ban_text_btn_components {
+        margin-left: 5px;
+    }
+
+    .ban_text_btn_details,
+    .ban_text_btn_components {
+        font-size: 12px;
+        padding: 10px 18px;
+        border-radius: 18px
+    }
+
+    .slider_wrapper {
+        height: 220px;
+        width: 220px;
+    }
+
+    .ban_img {
+        width: 30%;
+        margin-top: 50px;
+        margin-right: 30px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    /* banner end */
+    /* idea start */
+    .idea_txt,
+    .idea_img {
+        width: 100%;
+    }
+
+    .idea_txt_main {
+        padding-right: 0px;
+
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .idea_txt_key_points {
+        margin-right: 0px;
+    }
+
+    .idea_txt_key_points_tiles {
+        width: 48%;
+    }
+
+    .idea_txt_key_points_tiles_details p {
+        font-size: 12px;
+    }
+
+    .idea_img {
+        margin: 50px 0;
+        justify-content: center;
+    }
+
+    .idea_img img {
+        width: 80%;
+    }
+
+    /* idea end */
+    /* how its work start */
+    .hiw_proccess_tiles {
+        width: 45%;
+        margin-bottom: 20px;
+
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .hiw_system_arch_main_header h3 {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .hiw_system_arch_main_tiles_details {
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .hiw_system_arch_img {
+        width: 100%;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .hiw_system_arch_img img {
+        width: 80%;
+        height: fit-content;
+    }
+
+    /* how its work end */
+    /* use case start */
+    .use_case_tile_wrapper {
+        justify-content: space-between;
+    }
+
+    .use_case_tile {
+        width: 45%;
+    }
+
+    /* use case end */
+    /* component start */
+    .component_tiles {
+        justify-content: center;
+    }
+
+    .component_tile {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .component_tile_header {
+        h3 {
+            font-size: 14px;
+        }
+    }
+
+    .component_tile_mini_details {
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .component_key_feature_main_header {
+        h3 {
+            font-size: 14px;
+        }
+    }
+
+    .component_tile_mini_details {
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .component_key_feture_tile_details {
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .component_key_feture_tile {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    /* component end */
+    /* about us start */
+    .abt_wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .abt_main {
+        width: 100%;
+        padding-right: 0px;
+    }
+
+    .abt_main_img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .abt_main_text {
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+            padding-bottom: 20px;
+        }
+    }
+
+    .abt_main_text_tile_icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .abt_main_text_tile {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .abt_us_img {
+        /* Dimensions to fit the side column */
+        width: 100%;
+        position: relative;
+        /* Optional: ensures it doesn't shrink in a tight flex row */
+        flex-shrink: 0;
+    }
+
+    /* about us end */
+    /* our team start */
+    .we_wrapper {
+        justify-content: space-between;
+        padding: 20px 0;
+    }
+
+    .we_tile {
+        width: 30%;
+    }
+
+    .we_tile_img {
+        display: flex;
+        justify-content: center;
+    }
+
+    .we_tile_img img {
+        width: 100%;
+    }
+
+    .we_tile_details {
+        text-align: center;
+
+        h2 {
+            font-size: 12px;
+        }
+
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 12px;
+            padding-bottom: 16px;
+        }
+    }
+
+    /* our team end */
+    /* footer start */
+    .footer_logo {
+        padding: 0px;
+    }
+
+    .footer_logo img {
+        width: 50%;
+    }
+
+    .footer_icon ul li:first-child {
+        margin-left: 0;
+    }
+
+    /* footer end */
+}
+
+
+@media (min-width: 993px) and (max-width: 1200px) {
+
+    /* Styles for large devices (large laptops) */
+    /* common css start */
+    .section_header {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 50px;
+
+        h2 {
+            font-size: 30px;
+            font-weight: bold;
+            font-family: "Hind Siliguri", sans-serif;
+            color: #000;
+            margin-bottom: 27px;
+        }
+
+        p {
+            font-size: 22px;
+            font-weight: normal;
+            font-family: "Hind Siliguri", sans-serif;
+            color: #4A5565;
+        }
+    }
+
+    /* common css end */
+    /* nav start */
+    .navbar-brand img {
+        width: 200px;
+    }
+
+    .nav-item a {
+        padding: 0 8px !important;
+    }
+
+    /* nav end */
+
+
+    /* banner start */
+
+    .ban_text_main {
+        padding-top: 25px;
+        width: 70%;
+    }
+
+    .ban_text_catagory p {
+        padding: 5px 10px;
+        font-size: 16px;
+        border-radius: 30px;
+    }
+
+    .ban_text_btn_details,
+    .ban_text_btn_components {
+        font-size: 14px;
+        padding: 16px 22px;
+        border-radius: 20px
+    }
+
+    .ban_img {
+        width: 30%;
+        margin-top: 50px;
+        margin-right: 30px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    /* banner end */
+    /* idea start */
+    .idea_txt {
+        width: 50%;
+    }
+
+    .idea_img {
+        width: 50%;
+        height: 100%;
+        margin: 50px 0;
+        justify-content: end;
+    }
+
+    .idea_txt_key_points_tiles {
+        width: 45%;
+    }
+
+    .idea_img img {
+        width: 100%;
+        height: fit-content;
+        margin-top: 30px;
+    }
+
+    /* idea end */
+    /* how it works start */
+    .hiw_system_arch_main {
+        width: 50%;
+    }
+
+    .hiw_system_arch_img {
+        width: 50%;
+        justify-content: end;
+        margin-top: 180px;
+    }
+
+    .hiw_system_arch_img img {
+        width: 80%;
+        height: fit-content;
+    }
+
+    /* how it works end */
+    /* components start */
+    .component_key_feture_tile {
+        width: 30%;
+        display: flex;
+        justify-content: start;
+        flex-wrap: wrap;
+    }
+
+    .component_key_feture_tile_icon {
+        margin: 0 0px;
+    }
+
+    /* components end */
+    /* about us start */
+    .abt_main_img img {
+        width: 100%;
+    }
+
+    /* about us end */
+    /* our team start */
+    .we_wrapper {
+        justify-content: space-between;
+        padding: 30px 0;
+    }
+
+    .we_tile {
+        width: 23%;
+    }
+
+    .we_tile_img {
+        display: flex;
+        justify-content: center;
+    }
+
+    .we_tile_img img {
+        width: 100%;
+    }
+
+    .we_tile_details {
+        text-align: center;
+
+        h2 {
+            font-size: 14px;
+        }
+
+        h3 {
+            font-size: 14px;
+        }
+
+        p {
+            font-size: 14px;
+            padding-bottom: 12px;
+        }
+    }
+
+    /* our team end */
+}
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+
+    /* menu start */
+    .nav-item a {
+        padding: 0 10px !important;
+    }
+
+    .navbar-nav li a {
+        font-family: "Hind Siliguri", sans-serif;
+    }
+
+    /* menu end */
+    /* how it works start */
+    .hiw_system_arch_main {
+        width: 50%;
+    }
+
+    .hiw_system_arch_img {
+        width: 50%;
+        justify-content: end;
+        margin-top: 140px;
+    }
+
+    .hiw_system_arch_img img {
+        width: 80%;
+        height: fit-content;
+    }
+
+    /* how it works end */
+}
+
+@media (min-width: 1401px) {
+
+    /* Styles for extra large devices (very large desktop monitors) */
+    /* how it works start */
+    .hiw_system_arch_main {
+        width: 50%;
+    }
+
+    .hiw_system_arch_img {
+        width: 50%;
+        justify-content: end;
+        margin-top: 80px;
+    }
+
+    .hiw_system_arch_img img {
+        width: 90%;
+        height: fit-content;
+    }
+
+    /* how it works end */
+}
+
+
+/* responsive css end */

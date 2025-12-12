@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Based Plant Watering System Using ESP32 and Blynk</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="css/ai.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./images/icon/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- nav start -->
+    <nav class="navbar navbar-expand-lg " id="nav">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="images/icon/nav-logo-for-white-bg.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">হোম</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ai_qa">প্ল্যান্ট এসিস্ট্যান্ট</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#idea">ধারণা</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how_it_works"> কার্য-পদ্ধতি</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#use_case">ব্যবহার ক্ষেত্র</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#components">কম্পোনেন্টস</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about_us">আমাদের সম্পর্কে</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- nav end -->
+
+    <!-- hero section start -->
+    <section id="home" class="banner_texture">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="lotapata_corner top_left"></div>
+                    <div class="lotapata_corner bottom_right"></div>
+                    <div class="ban_wrapper">
+                        <div class="ban_text">
+                            <div class="ban_text_catagory">
+                                <p>ইন্টারনেট অব থিংস নির্ভর আধুনিক কৃষি</p>
+                            </div>
+                            <div class="ban_text_main">
+                                <h3>আইওটি ভিত্তিক স্মার্ট সেচ প্রযুক্তি</h3>
+                                <p>এই প্রকল্পটি একটি IoT-ভিত্তিক স্মার্ট সেচ ব্যবস্থা, যেখানে ESP32 ও Blynk প্ল্যাটফর্ম
+                                    ব্যবহার করে গাছের যত্ন নেওয়া যায় স্বয়ংক্রিয়ভাবে। ব্যবহারকারী মাটির আর্দ্রতা
+                                    পর্যবেক্ষণ ও পানির সরবরাহ নিয়ন্ত্রণ করতে পারেন বিশ্বের যেকোনো প্রান্ত থেকে।</p>
+                            </div>
+                            <div class="ban_text_btn">
+                                <a href="#how_it_works" class="ban_text_btn_details">বিস্তারিত দেখুন</a>
+                                <a href="#components" class="ban_text_btn_components">কম্পোনেন্টগুলো দেখুন</a>
+                            </div>
+                        </div>
+                        <div class="ban_img">
+                            <div class="ban_img_bg">
+                                <div class="slider_wrapper">
+                                    <img src="images/banner.png" alt="Slide 1">
+
+                                    <img src="images/banner2.png" alt="Slide 2">
+
+                                    <img src="images/banner3.png" alt="Slide 3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- hero section end -->
+    <!-- ai start -->
+    <section class="ai-section" id="ai_qa">
+        <div class="ai-container">
+            <div class="ai-card">
+                <div class="ai-header shiny_header">
+                    <h2 class="ai-title">
+                        <span class="ai-icon-emoji">✨</span> AI প্ল্যান্ট অ্যাসিস্ট্যান্ট
+                    </h2>
+                    <span class="ai-badge">Powered by Squadxtech</span>
+                </div>
+                <div class="ai-body">
+                    <p class="ai-description">
+                        আপনার গাছের যত্ন নিয়ে কোনো প্রশ্ন আছে? অথবা কোন গাছের জন্য কতটুকু ময়েশ্চার লেভেল সেট করবেন জানতে
+                        চান? নিচে আপনার প্রশ্ন লিখুন, আমাদের AI আপনাকে সাহায্য করবে।
+                    </p>
+
+                    <div class="input-group">
+                        <div class="input-wrapper">
+                            <label for="userQuery" class="ai-label">আপনার প্রশ্ন:</label>
+                            <textarea id="userQuery" rows="3" class="ai-textarea"
+                                placeholder="উদাহরণ: আমার গোলাপ গাছের পাতা হলুদ হয়ে যাচ্ছে, কি করব?"></textarea>
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="imageInput" class="ai-label">ছবি যুক্ত করুন (অপশনাল):</label>
+                            <input type="file" id="imageInput" accept="image/*" class="ai-file-input">
+                        </div>
+
+                        <div class="btn-container">
+                            <button onclick="askAI()" id="askBtn" class="ai-btn">
+                                <span id="btnText" class="btn_txt">জিজ্ঞাসা করুন</span>
+                                <svg id="btnIcon" class="btn-icon" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                                <div id="loader" class="loader hidden"></div>
+                            </button>
+                        </div>
+                        <div id="responseArea" class="ai-response-area hidden">
+                            <div class="ai-response-bar"></div>
+                            <h3 class="ai-response-title">
+                                <svg class="response-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                                    </path>
+                                </svg>
+                                সমাধান:
+                            </h3>
+                            <div id="aiResponse" class="ai-response-text"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ai end -->
+
+    <!-- idea section start -->
+    <section id="idea">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section_header">
+                        <h2>মূল <span>ভাবনা</span></h2>
+                        <p>স্মার্ট অটোমেশনের মাধ্যমে গাছের যত্ন নেওয়া</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="idea_wrapper">
+                        <div class="idea_txt">
+                            <div class="idea_txt_main">
+                                <h3>চ্যালেঞ্জ</h3>
+                                <p>গাছের মালিকরা প্রায়ই সঠিকভাবে সেচ করার সময়সূচি মেনে চলতে পারেন না বেশি বা কম পানি
+                                    দেওয়া গাছকে চাপ, রোগ এবং ক্ষতির দিকে নিয়ে যেতে পারে। ব্যস্ততা ও ভ্রমণ নিয়মিত
+                                    যত্নকে আরও কঠিন করে তোলে। </p>
+                                <h3>আমাদের সমাধান</h3>
+                                <p>IoT ভিত্তিক একটি বুদ্ধিমান সিস্টেম যা মাটির আর্দ্রতা রিয়েল-টাইমে ট্র্যাক করে এবং
+                                    স্বয়ংক্রিয়ভাবে সেচ পরিচালনা করে। Blynk অ্যাপের সাহায্যে আপনার স্মার্টফোন থেকে
+                                    সম্পূর্ণ নিয়ন্ত্রণ ও পর্যবেক্ষণ করা যায়, গাছের যত্ন ২৪/৭ নিশ্চিত করতে।</p>
+                            </div>
+                            <div class="idea_txt_key_points">
+                                <div class="idea_txt_key_points_tiles idea_txt_key_points_1 card_animate">
+                                    <div class="idea_txt_key_points_tiles_icon">
+                                        <img src="images/icon/water-drop.png" alt="">
+                                    </div>
+                                    <div class="idea_txt_key_points_tiles_details">
+                                        <p>স্বয়ংক্রিয়ভাবে পানি সরবরাহ</p>
+                                    </div>
+                                </div>
+                                <div class="idea_txt_key_points_tiles idea_txt_key_points_2 card_animate">
+                                    <div class="idea_txt_key_points_tiles_icon">
+                                        <img src="images/icon/wifi.png" alt="">
+                                    </div>
+                                    <div class="idea_txt_key_points_tiles_details">
+                                        <p>IoT ভিত্তিক সংযোগ</p>
+                                    </div>
+                                </div>
+                                <div class="idea_txt_key_points_tiles idea_txt_key_points_3 card_animate">
+                                    <div class="idea_txt_key_points_tiles_icon">
+                                        <img src="images/icon/mobile.png" alt="">
+                                    </div>
+                                    <div class="idea_txt_key_points_tiles_details">
+                                        <p>মোবাইল দিয়ে নিয়ন্ত্রণ</p>
+                                    </div>
+                                </div>
+                                <div class="idea_txt_key_points_tiles idea_txt_key_points_4 card_animate">
+                                    <div class="idea_txt_key_points_tiles_icon">
+                                        <img src="images/icon/statistics.png" alt="">
+                                    </div>
+                                    <div class="idea_txt_key_points_tiles_details">
+                                        <p>রিয়েল-টাইম ডেটা</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="idea_container">
+                            <div class="idea_stack_box">
+
+                                <div class="idea_card active">
+                                    <img src="images/idea2.png" alt="Idea 1">
+                                </div>
+
+                                <div class="idea_card next">
+                                    <img src="images/idea5.png" alt="Idea 2">
+                                </div>
+
+                                <div class="idea_card">
+                                    <img src="images/idea3.png" alt="Idea 3">
+                                </div>
+
+                                <div class="idea_card">
+                                    <img src="images/idea4.png" alt="Idea 4">
+                                </div>
+
+                                <div class="idea_card prev">
+                                    <img src="images/idea.png" alt="Idea 5">
+                                </div>
+
+                            </div>
+
+                            <div class="idea_controls">
+                                <button class="idea_btn" onclick="rotateCards(-1)"><i
+                                        class="fa-solid fa-angle-down"></i></button> <button class="idea_btn"
+                                    onclick="rotateCards(1)"><i class="fa-solid fa-angle-up"></i></button>
+                            </div>
+
+                            <div class="idea_dots">
+                                <span class="i_dot active" onclick="jumpToCard(0)"></span>
+                                <span class="i_dot" onclick="jumpToCard(1)"></span>
+                                <span class="i_dot" onclick="jumpToCard(2)"></span>
+                                <span class="i_dot" onclick="jumpToCard(3)"></span>
+                                <span class="i_dot" onclick="jumpToCard(4)"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- idea section end -->
+
+    <!-- how it works start -->
+    <section id="how_it_works">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section_header">
+                        <h2>কীভাবে <span>কাজ</span> করে</h2>
+                        <p>হার্ডওয়্যার ও সফটওয়্যার একত্রে কাজ করে এক ধরনের নির্বিঘ্ন সমন্বয় তৈরি করে</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hiw_proccess">
+                        <div class="hiw_proccess_tiles card_animate">
+                            <div class="hiw_proccess_tiles_icon1">
+                                <p>১</p>
+                            </div>
+                            <div class="hiw_proccess_tiles_details">
+                                <h3>সেন্সরের মাধ্যমে সনাক্তকরণ</h3>
+                                <p>Soil moisture সেন্সর মাটির আর্দ্রতা ধারাবাহিকভাবে নিরীক্ষণ করে এবং ESP32
+                                    মাইক্রোকন্ট্রোলারকে ডেটা সরবরাহ করে</p>
+                            </div>
+                        </div>
+                        <div class="hiw_proccess_tiles card_animate">
+                            <div class="hiw_proccess_tiles_icon2">
+                                <p>২</p>
+                            </div>
+                            <div class="hiw_proccess_tiles_details">
+                                <h3>ডেটা প্রক্রিয়াকরণ</h3>
+                                <p>ESP32 সেন্সরের তথ্য প্রক্রিয়াকরণ করে এবং WiFi ব্যবহার করে Blynk ক্লাউডের সঙ্গে সংযোগ
+                                    রক্ষা করে</p>
+                            </div>
+                        </div>
+                        <div class="hiw_proccess_tiles card_animate">
+                            <div class="hiw_proccess_tiles_icon3">
+                                <p>৩</p>
+                            </div>
+                            <div class="hiw_proccess_tiles_details">
+                                <h3>স্মার্ট সিদ্ধান্ত গ্রহন</h3>
+                                <p>সিস্টেম স্বয়ংক্রিয়ভাবে ডেটা বিশ্লেষণ করে এবং মাটি খুব শুষ্ক হলে পানি সরবরাহ শুরু
+                                    করে</p>
+                            </div>
+                        </div>
+                        <div class="hiw_proccess_tiles card_animate">
+                            <div class="hiw_proccess_tiles_icon4">
+                                <p>৪</p>
+                            </div>
+                            <div class="hiw_proccess_tiles_details">
+                                <h3>রিমোট মনিটরিং</h3>
+                                <p>যেকোনো স্থানে Blynk অ্যাপ ব্যবহার করে রিয়েল-টাইম তথ্য পর্যবেক্ষণ এবং সিস্টেম
+                                    নিয়ন্ত্রণ করুন।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hiw_system_arch_wrapper card_animate">
+                        <div class="hiw_system_arch_main">
+                            <div class="hiw_system_arch_main_header">
+                                <h3>সিস্টেমের কাঠামো</h3>
+                            </div>
+                            <div class="hiw_system_arch_main_tiles_wrapper">
+                                <div class="hiw_system_arch_main_tile">
+                                    <div class="hiw_system_arch_main_tiles_icon">
+                                        <img src="images/icon/sensor layer.png" alt="">
+                                    </div>
+                                    <div class="hiw_system_arch_main_tiles_details">
+                                        <h3>সেন্সর পর্যায়</h3>
+                                        <p>মাটির আর্দ্রতা সেন্সর থেকে পরিবেশগত তথ্য ধারাবাহিকভাবে সংগ্রহ করে।</p>
+                                    </div>
+                                </div>
+                                <div class="hiw_system_arch_main_tile">
+                                    <div class="hiw_system_arch_main_tiles_icon">
+                                        <img src="images/icon/process layer.png" alt="">
+                                    </div>
+                                    <div class="hiw_system_arch_main_tiles_details">
+                                        <h3>প্রক্রিয়াকরণ পর্যায় </h3>
+                                        <p>ESP32 মাইক্রোকন্ট্রোলার ডেটা প্রক্রিয়াজাত করে এবং সিদ্ধান্ত গ্রহণ করে।</p>
+                                    </div>
+                                </div>
+                                <div class="hiw_system_arch_main_tile">
+                                    <div class="hiw_system_arch_main_tiles_icon">
+                                        <img src="images/icon/communication layer.png" alt="">
+                                    </div>
+                                    <div class="hiw_system_arch_main_tiles_details">
+                                        <h3>যোগাযোগ পর্যায়</h3>
+                                        <p>Blynk ক্লাউড প্ল্যাটফর্মের সাথে WiFi ভিত্তিক সংযোগ স্থাপন করে।</p>
+                                    </div>
+                                </div>
+                                <div class="hiw_system_arch_main_tile">
+                                    <div class="hiw_system_arch_main_tiles_icon">
+                                        <img src="images/icon/work end layer.png" alt="">
+                                    </div>
+                                    <div class="hiw_system_arch_main_tiles_details">
+                                        <h3>কার্য সম্পাদন পর্যায় </h3>
+                                        <p>স্বয়ংক্রিয় সেচের কার্যক্রম পরিচালনার জন্য পানি পাম্প ও রিলে ব্যবস্থাপনা
+                                            করে।</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hiw_system_arch_img">
+                            <img src="images/how-it-works.gif" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- how it works end -->
+
+    <!-- use case start -->
+    <section id="use_case">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section_header">
+                        <h2>ব্যবহার <span>ক্ষেত্র</span></h2>
+                        <p>বহুমুখী পরিবেশ এবং বিভিন্ন ব্যবহার ক্ষেত্রে উপযুক্ত</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="use_case_tile_wrapper">
+                        <div class="use_case_tile use_case_tile1 card_animate">
+                            <div class="use_case_tile_icon">
+                                <img src="images/icon/home garden usage.png" alt="">
+                            </div>
+                            <div class="use_case_tile_details">
+                                <h3>বাড়ির বাগান</h3>
+                                <p>ইনডোর গাছ এবং ছোট ঘরোয়া বাগানের জন্য একদম উপযুক্ত। কাজ বা ভ্রমণের সময়ও গাছের
+                                    আর্দ্রতা বজায় থাকে।</p>
+                            </div>
+                            <div class="use_case_tile_keypoints">
+                                <ul>
+                                    <li>বাসার ভিতরের টবের গাছ</li>
+                                    <li>বারান্দার বাগান</li>
+                                    <li>মশলা ও ঔষধিগাছের বাগান</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="use_case_tile use_case_tile2 card_animate">
+                            <div class="use_case_tile_icon">
+                                <img src="images/icon/commercial greenhouse.png" alt="">
+                            </div>
+                            <div class="use_case_tile_details">
+                                <h3>বাণিজ্যিক গ্রীনহাউস</h3>
+                                <p>বড় পরিসরের চাষাবাদের জন্য উপযোগী। বিভিন্ন জোনের আর্দ্রতা আলাদাভাবে নিয়ন্ত্রণ করে
+                                    সুনির্দিষ্ট সেচ নিশ্চিত করে।</p>
+                            </div>
+                            <div class="use_case_tile_keypoints">
+                                <ul>
+                                    <li>বড় পরিসরের চাষাবাদ</li>
+                                    <li>বিভিন্ন জোনের নিয়ন্ত্রণ ব্যবস্থা</li>
+                                    <li>তথ্য বিশ্লেষণ</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="use_case_tile use_case_tile3 card_animate">
+                            <div class="use_case_tile_icon">
+                                <img src="images/icon/Urban Farming.png" alt="">
+                            </div>
+                            <div class="use_case_tile_details">
+                                <h3>নগর কৃষি চাষ</h3>
+                                <p>রুফটপ বাগান ও নগর কৃষি প্রকল্পে ব্যবহার উপযোগী, পানি সঠিকভাবে ব্যবহার ও
+                                    রক্ষণাবেক্ষণের সময় হ্রাস করুন।</p>
+                            </div>
+                            <div class="use_case_tile_keypoints">
+                                <ul>
+                                    <li>ছাদের বাগান</li>
+                                    <li>সামাজিক বাগান</li>
+                                    <li>উল্লম্ব চাষ</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="use_case_tile use_case_tile4 card_animate">
+                            <div class="use_case_tile_icon">
+                                <img src="images/icon/agricultural land.png" alt="">
+                            </div>
+                            <div class="use_case_tile_details">
+                                <h3>কৃষি ভূমি</h3>
+                                <p>কৃষি ক্ষেত্র জুড়ে প্রিসিশন ফার্মিং কার্যকর করুন, মাটির আর্দ্রতা মনিটরিং এবং সেচ
+                                    ব্যবস্থা স্বয়ংক্রিয়ভাবে পরিচালনা করুন।</p>
+                            </div>
+                            <div class="use_case_tile_keypoints">
+                                <ul>
+                                    <li>কৃষি সেচ ব্যবস্থা</li>
+                                    <li>পানির সাশ্রয়</li>
+                                    <li>ফসলের উৎপাদন বৃদ্ধি</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="use_case_tile use_case_tile5 card_animate">
+                            <div class="use_case_tile_icon">
+                                <img src="images/icon/vacation mode.png" alt="">
+                            </div>
+                            <div class="use_case_tile_details">
+                                <h3>ভ্রমণকালীন মোড</h3>
+                                <p>ভ্রমণের সময়ও নিশ্চিত থাকুন যে গাছের যত্ন হচ্ছে। নোটিফিকেশন গ্রহণ করুন এবং
+                                    দূরবর্তীভাবে নিয়ন্ত্রণ করুন।</p>
+                            </div>
+                            <div class="use_case_tile_keypoints">
+                                <ul>
+                                    <li>স্বয়ংক্রিয় পরিচর্যা</li>
+                                    <li>রিমোট পর্যবেক্ষণ ব্যবস্থা</li>
+                                    <li>স্মার্ট নোটিফিকেশন</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="use_case_tile use_case_tile6 card_animate">
+                            <div class="use_case_tile_icon ">
+                                <img src="images/icon/experiment.png" alt="">
+                            </div>
+                            <div class="use_case_tile_details">
+                                <h3>গবেষণা ও শিক্ষা</h3>
+                                <p>শিক্ষা প্রতিষ্ঠান এবং গবেষণা প্রকল্পের জন্য উপযুক্ত। তথ্য সংগ্রহ করুন এবং গাছের
+                                    বৃদ্ধি পর্যবেক্ষণ করুন।</p>
+                            </div>
+                            <div class="use_case_tile_keypoints">
+                                <ul>
+                                    <li>ডেটা সংগ্রহ</li>
+                                    <li>আইওটি শিক্ষা</li>
+                                    <li>প্রয়োগ ও পরীক্ষা</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- use case end -->
+
+    <!-- components start -->
+    <section id="components">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section_header">
+                        <h2>ব্যবহৃত <span>উপাদানসমূহ</span></h2>
+                        <p>সিস্টেমের স্থায়িত্ব ও নির্ভরযোগ্যতার জন্য মানসম্পন্ন হার্ডওয়্যার উপাদান সমন্বয়</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="component_wrapper">
+                        <div class="component_tiles">
+                            <div class="component_tile">
+                                <div class="component_tile_header main_component_header">
+                                    <h3>মূল উপাদানসমূহ</h3>
+                                </div>
+                                <div class="component_tiles_mini">
+                                    <div class="component_tile_mini card_animate">
+                                        <div class="component_tile_mini_icon">
+                                            <img src="images/icon/esp32 controller.png" alt="">
+                                        </div>
+                                        <div class="component_tile_mini_details">
+                                            <h3>ESP32 মাইক্রোকন্ট্রোলার</h3>
+                                            <p>ডুয়াল-কোর প্রসেসর, যা WiFi ও Bluetooth সমন্বিত। সেন্সর ডেটা
+                                                প্রক্রিয়াজাতকরণ এবং ক্লাউড প্ল্যাটফর্মের সঙ্গে যোগাযোগ নিশ্চিত করে।</p>
+                                        </div>
+                                    </div>
+                                    <div class="component_tile_mini card_animate">
+                                        <div class="component_tile_mini_icon">
+                                            <img src="images/icon/soil moisture sensor.png" alt="">
+                                        </div>
+                                        <div class="component_tile_mini_details">
+                                            <h3>মাটির আর্দ্রতা সেন্সর</h3>
+                                            <p>ক্যাপাসিটিভ আর্দ্রতা সেন্সর যা মাটির আর্দ্রতা নির্ভুলভাবে নির্ধারণ করে।
+                                                জং প্রতিরোধী এবং স্থায়িত্ব নিশ্চিত করে।</p>
+                                        </div>
+                                    </div>
+                                    <div class="component_tile_mini card_animate">
+                                        <div class="component_tile_mini_icon">
+                                            <img src="images/icon/water pump.png" alt="">
+                                        </div>
+                                        <div class="component_tile_mini_details">
+                                            <h3>সেচ পাম্প</h3>
+                                            <p>12V DC সাবমার্সিবল সেচ পাম্প, প্রবাহ হার সমন্বয়যোগ্য। শক্তি-দক্ষ এবং
+                                                নিঃশব্দ কার্যক্ষমতা নিশ্চিত করে।</p>
+                                        </div>
+                                    </div>
+                                    <div class="component_tile_mini card_animate">
+                                        <div class="component_tile_mini_icon">
+                                            <img src="images/icon/power supply.png" alt="">
+                                        </div>
+                                        <div class="component_tile_mini_details">
+                                            <h3>বিদ্যুৎ সরবরাহ</h3>
+                                            <p>ESP32-এর জন্য 5V/2A অ্যাডাপ্টার এবং পানি পাম্পের জন্য 12V অ্যাডাপ্টার।
+                                                স্থিতিশীল ও নির্ভরযোগ্য বিদ্যুৎ সরবরাহ নিশ্চিত।</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="component_tile">
+                                <div class="component_tile_header helper_component_header">
+                                    <h3>অতিরিক্ত উপাদানসমূহ</h3>
+                                </div>
+                                <div class="component_tiles_mini">
+                                    <div class="component_tile_mini card_animate">
+                                        <div class="component_tile_mini_icon">
+                                            <img src="images/icon/jumper wire.png" alt="">
+                                        </div>
+                                        <div class="component_tile_mini_details">
+                                            <h3>বৈদ্যুতিক সংযোগ তারসমূহ</h3>
+                                            <p>প্রাথমিক পরীক্ষার জন্য জাম্পার তার এবং ব্রেডবোর্ড। চূড়ান্ত স্থাপনার জন্য
+                                                PCB ব্যবহার করা যায়। </p>
+                                        </div>
+                                    </div>
+                                    <div class="component_tile_mini card_animate">
+                                        <div class="component_tile_mini_icon">
+                                            <img src="images/icon/water pump.png" alt="">
+                                        </div>
+                                        <div class="component_tile_mini_details">
+                                            <h3>পানি সরবরাহ টিউব</h3>
+                                            <p>সিলিকন ফ্লেক্সিবল টিউবিং যা পানির সঠিক বিতরণ নিশ্চিত করে।</p>
+                                        </div>
+                                    </div>
+                                    <div class="component_tile_mini card_animate">
+                                        <div class="component_tile_mini_icon">
+                                            <img src="images/icon/transistors.png" alt="">
+                                        </div>
+                                        <div class="component_tile_mini_details">
+                                            <h3>ট্রানজিস্টর</h3>
+                                            <p>ট্রানজিস্টর হলো একটি ইলেকট্রনিক সুইচ যা ছোট সিগন্যাল দিয়ে বড় লোড
+                                                নিয়ন্ত্রণ করে।</p>
+                                        </div>
+                                    </div>
+                                    <div class="component_tile_mini card_animate">
+                                        <div class="component_tile_mini_icon">
+                                            <img src="images/icon/blynk app.png" alt="">
+                                        </div>
+                                        <div class="component_tile_mini_details">
+                                            <h3>Blynk অ্যাপ্লিকেশন প্ল্যাটফর্ম</h3>
+                                            <p>ক্লাউড-ভিত্তিক IoT প্ল্যাটফর্ম যা মোবাইল অ্যাপ ইন্টারফেসের মাধ্যমে ডিভাইস
+                                                পরিচালনা সহজ করে।</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="component_key_feature_wrapper">
+                        <div class="component_key_feature_main">
+                            <div class="component_key_feature_main_header">
+                                <h3>মূল বৈশিষ্ট্য ও সুবিধা</h3>
+                            </div>
+                            <div class="component_key_feature_main_tiles">
+                                <div class="component_key_feture_tile component_key_feture_tile1 card_animate">
+                                    <div class="component_key_feture_tile_icon">
+                                        <img src="images/icon/cost effective.png" alt="">
+                                    </div>
+                                    <div class="component_key_feture_tile_details">
+                                        <h3>অর্থ সাশ্রয়ী</h3>
+                                        <p>সম্পূর্ণ সিস্টেমের জন্য খরচ সাশ্রয়ী উপাদান, মোট খরচ BDT 3500 এর নিচে।</p>
+                                    </div>
+                                </div>
+                                <div class="component_key_feture_tile component_key_feture_tile2 card_animate">
+                                    <div class="component_key_feture_tile_icon">
+                                        <img src="images/icon/easy installation.png" alt="">
+                                    </div>
+                                    <div class="component_key_feture_tile_details">
+                                        <h3>সহজ ইনস্টলেশন</h3>
+                                        <p>সহজ তারের সংযোগ এবং Blynk অ্যাপের মাধ্যমে প্লাগ-অ্যান্ড-প্লে কনফিগারেশন</p>
+                                    </div>
+                                </div>
+                                <div class="component_key_feture_tile component_key_feture_tile3 card_animate">
+                                    <div class="component_key_feture_tile_icon">
+                                        <img src="images/icon/expandables.png" alt="">
+                                    </div>
+                                    <div class="component_key_feture_tile_details">
+                                        <h3>বড় পরিসরে সম্প্রসারণযোগ্য</h3>
+                                        <p>বহুজোন কনফিগারেশন এবং অতিরিক্ত সেন্সর সংযোজন সহজে করা যায়।</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- components end -->
+
+    <!-- about us start -->
+    <section id="about_us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section_header">
+                        <h2>আমাদের <span>সম্পর্কে</span></h2>
+                        <p>আধুনিক কৃষির জন্য টেকসই সমাধান উদ্ভাবন করছি</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="abt_wrapper">
+                        <div class="abt_main">
+                            <div class="abt_main_text">
+                                <h3>আমাদের উদ্দেশ্য</h3>
+                                <p>আমাদের লক্ষ্য IoT প্রযুক্তি ব্যবহার করে গাছের যত্নকে আরও সহজ, দক্ষ এবং টেকসই করা/
+                                    আমাদের কম্পিউটার ইঞ্জিনিয়ার দল একত্রিত হয়ে এমন সমাধান তৈরি করছে যা প্রযুক্তি ও
+                                    প্রকৃতির সংযোগ স্থাপন করে।</p>
+                                <p>আমাদের স্মার্ট ওয়াটারিং সিস্টেম ব্যবহার করে আমরা জল অপচয় হ্রাস, উদ্ভিদের স্বাস্থ্য
+                                    উন্নয়ন এবং ব্যবহারকারীদের তথ্য-চালিত অন্তর্দৃষ্টি প্রদান করে কার্যকর সিদ্ধান্ত
+                                    নেওয়ার সুযোগ নিশ্চিত করি।</p>
+                            </div>
+                            <div class="abt_main_text_tile_main">
+                                <div class="abt_main_text_tile">
+                                    <div class="abt_main_text_tile_icon">
+                                        <img src="images/icon/save water.png" alt="">
+                                    </div>
+                                    <div class="abt_main_text_tile_details">
+                                        <h3>৩০ শতাংশ</h3>
+                                        <p>পানি সাশ্রয়</p>
+                                    </div>
+                                </div>
+                                <div class="abt_main_text_tile">
+                                    <div class="abt_main_text_tile_icon">
+                                        <img src="images/icon/plant health.png" alt="">
+                                    </div>
+                                    <div class="abt_main_text_tile_details">
+                                        <h3>৯৫ শতাংশ</h3>
+                                        <p>উদ্ভিদের স্বাস্থ্য</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="abt_us_img">
+                            <div class="slider_box">
+
+                                <div class="slider_track">
+                                    <div class="slide prev" onclick="moveSlide(-1)">
+                                        <img src="images/about us.png" alt="Nature">
+                                    </div>
+
+                                    <div class="slide active">
+                                        <img src="images/about us 2.jpg" alt="River">
+                                    </div>
+
+                                    <div class="slide next" onclick="moveSlide(1)">
+                                        <img src="images/about us 3.jpg" alt="Canyon">
+                                    </div>
+
+                                    <!-- <div class="slide">
+                                        <img src="" alt="">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="" alt="">
+                                    </div> -->
+                                </div>
+
+                                <button class="nav_btn prev_btn" onclick="moveSlide(-1)">&#10094;</button>
+                                <button class="nav_btn next_btn" onclick="moveSlide(1)">&#10095;</button>
+
+                                <div class="dots_container">
+                                    <span class="dot" onclick="currentSlide(0)"></span>
+                                    <span class="dot active" onclick="currentSlide(1)"></span>
+                                    <span class="dot" onclick="currentSlide(2)"></span>
+                                    <!-- <span class="dot" onclick="currentSlide(3)"></span>
+                                    <span class="dot" onclick="currentSlide(4)"></span> -->
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="we_header section_header">
+                        <h2>আমাদের <span>টীম</span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="we_wrapper">
+                        <div class="we_tile card_animate">
+                            <div class="we_tile_img">
+                                <img src="images/team/fuad.png" alt="">
+                                <div class="we_tile_image_overlay">
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/ahshan.hafiz.com.bd"><i
+                                                    class="fa-brands fa-facebook"></i></a></li>
+                                        <li><a href="https://wa.me/01954691305" target="_blank"><i
+                                                    class="fa-brands fa-whatsapp"></i></a></li>
+                                        <li><a href="https://ahshan-hafiz-fuad.netlify.app/"><i
+                                                    class="fa-solid fa-globe"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/in/ahshan-hafiz-fuad-2466111a4/"><i
+                                                    class="fa-brands fa-linkedin"></i></a></li>
+                                        <li><a href="https://github.com/Fuadhafiz999"><i
+                                                    class="fa-brands fa-github"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="we_tile_details">
+                                <h2>আহসান হাফিজ ফুয়াদ</h2>
+                                <h3>কম্পিউটার ডিপার্টমেন্ট (৬ষ্ঠ)</h3>
+                                <p>৭৫৩৬০২ | ১৫০২২৭৬৩৯২</p>
+                            </div>
+                        </div>
+                        <div class="we_tile card_animate">
+                            <div class="we_tile_img">
+                                <img src="images/team/khadimul.jpeg" alt="">
+                                <div class="we_tile_image_overlay">
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/khadimul.islam.840768"><i
+                                                    class="fa-brands fa-facebook"></i></a></li>
+                                        <li><a href="https://wa.me/01791306295" target="_blank"><i
+                                                    class="fa-brands fa-whatsapp"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="we_tile_details">
+                                <h2>খাদিমুল ইসলাম</h2>
+                                <h3>কম্পিউটার ডিপার্টমেন্ট (৬ষ্ঠ)</h3>
+                                <p>৭৫৩৫৯৮ | ১৫০২২৭৬---</p>
+                            </div>
+                        </div>
+                        <div class="we_tile card_animate">
+                            <div class="we_tile_img">
+                                <img src="images/team/sarwar.jpeg" alt="">
+                                <div class="we_tile_image_overlay">
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/femas.sorwar.3"><i
+                                                    class="fa-brands fa-facebook"></i></a></li>
+                                        <li><a href="https://wa.me/+8801619923032" target="_blank"><i
+                                                    class="fa-brands fa-whatsapp"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/in/sahjadul-islam-178902392/"><i
+                                                    class="fa-brands fa-linkedin"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="we_tile_details">
+                                <h2>মোঃ সারোয়ার</h2>
+                                <h3>কম্পিউটার ডিপার্টমেন্ট (৬ষ্ঠ)</h3>
+                                <p>৭৫৩৬৫০ | ১৫০২২৭৬৩৪৪</p>
+                            </div>
+                        </div>
+                        <div class="we_tile card_animate">
+                            <div class="we_tile_img">
+                                <img src="images/team/tanvir.jpeg" alt="">
+                                <div class="we_tile_image_overlay">
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/share/1D6JgEkuqU/"><i
+                                                    class="fa-brands fa-facebook"></i></a></li>
+                                        <li><a href="https://wa.me/+8801918732178" target="_blank"><i
+                                                    class="fa-brands fa-whatsapp"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="we_tile_details">
+                                <h2>তানভীর আজাদ খান</h2>
+                                <h3>কম্পিউটার ডিপার্টমেন্ট (৬ষ্ঠ)</h3>
+                                <p>৭৫৩৬১৯ | ১৫০২২৭৬৩৭৫</p>
+                            </div>
+                        </div>
+                        <div class="we_tile card_animate">
+                            <div class="we_tile_img">
+                                <img src="images/team/rifat.jpg" alt="">
+                                <div class="we_tile_image_overlay">
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/md.rifat.201278"><i
+                                                    class="fa-brands fa-facebook"></i></a></li>
+                                        <li><a href="https://wa.me/+8801790051097" target="_blank"><i
+                                                    class="fa-brands fa-whatsapp"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="we_tile_details">
+                                <h2>মোঃ রিফাত ইসলাম</h2>
+                                <h3>কম্পিউটার ডিপার্টমেন্ট (৬ষ্ঠ)</h3>
+                                <p>৭৫৩৬৫৬ | ১৫০২২৭৬৩৩৮</p>
+                            </div>
+                        </div>
+                        <div class="we_tile card_animate">
+                            <div class="we_tile_img">
+                                <img src="images/team/jahidul-hoque.jpeg" alt="">
+                                <div class="we_tile_image_overlay">
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/share/1JCfu7Ggih/"><i
+                                                    class="fa-brands fa-facebook"></i></a></li>
+                                        <li><a href="https://wa.me/+8801789293803" target="_blank"><i
+                                                    class="fa-brands fa-whatsapp"></i></a></li>
+                                        <li><a href="https://zahidul-haque.vercel.app/"><i
+                                                    class="fa-solid fa-globe"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/in/zahid767/"><i
+                                                    class="fa-brands fa-linkedin"></i></a></li>
+                                        <li><a href="https://github.com/Jahid0178"><i
+                                                    class="fa-brands fa-github"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="we_tile_details">
+                                <h2>জাহিদুল হক</h2>
+                                <h3>কম্পিউটার ডিপার্টমেন্ট (৬ষ্ঠ)</h3>
+                                <p>৭৫৩৬০৯ | ১৫০২২৭৬৩৮৫</p>
+                            </div>
+                        </div>
+                        <div class="we_tile card_animate">
+                            <div class="we_tile_img">
+                                <img src="images/team/parvej rana.png" alt="">
+                                <div class="we_tile_image_overlay">
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/share/17T1t37Ut3/"><i
+                                                    class="fa-brands fa-facebook"></i></a></li>
+                                        <li><a href="https://wa.me/+8801590064525" target="_blank"><i
+                                                    class="fa-brands fa-whatsapp"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="we_tile_details">
+                                <h2>মোঃ পারভেজ রানা</h2>
+                                <h3>কম্পিউটার ডিপার্টমেন্ট (৬ষ্ঠ)</h3>
+                                <p>৭৫৩৬৩৩ | ১৫০২২৭৬৩৬১</p>
+                            </div>
+                        </div>
+                        <div class="we_tile card_animate">
+                            <div class="we_tile_img">
+                                <img src="images/team/kripa mondol.jpeg" alt="">
+                                <div class="we_tile_image_overlay">
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/share/1GLfgYbwrR/"><i
+                                                    class="fa-brands fa-facebook"></i></a></li>
+                                        <li><a href="https://wa.me/+8801880125644" target="_blank"><i
+                                                    class="fa-brands fa-whatsapp"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="we_tile_details">
+                                <h2>কৃপা মন্ডল</h2>
+                                <h3>কম্পিউটার ডিপার্টমেন্ট (৬ষ্ঠ)</h3>
+                                <p>৭৫৩৬৩৯ | ১৫০২২৭৬৩৫৫</p>
+                            </div>
+                        </div>
+                        <div class="we_tile card_animate">
+                            <div class="we_tile_img">
+                                <img src="images/team/swarna.png" alt="">
+                                <div class="we_tile_image_overlay">
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/share/14QjyzcUNW3/"><i
+                                                    class="fa-brands fa-facebook"></i></a></li>
+                                        <li><a href="https://wa.me/+8801823076061" target="_blank"><i
+                                                    class="fa-brands fa-whatsapp"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="we_tile_details">
+                                <h2>স্বর্ণা দাস</h2>
+                                <h3>কম্পিউটার ডিপার্টমেন্ট (৬ষ্ঠ)</h3>
+                                <p>৭৫৩৬১২ | ১৫০২২৭৬৩৪৪</p>
+                            </div>
+                        </div>
+                        <div class="we_tile card_animate">
+                            <div class="we_tile_img">
+                                <img src="images/team/nafiza.jpeg" alt="">
+                                <div class="we_tile_image_overlay">
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/share/19wQPtBt4s/"><i
+                                                    class="fa-brands fa-facebook"></i></a></li>
+                                        <li><a href="https://wa.me/+8801824756234" target="_blank"><i
+                                                    class="fa-brands fa-whatsapp"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="we_tile_details">
+                                <h2>নাফিজা আক্তার দিঘী</h2>
+                                <h3>কম্পিউটার ডিপার্টমেন্ট (৬ষ্ঠ)</h3>
+                                <p>৭৫৩৬২৪ | ১৫০২২৭৬৩৭০</p>
+                            </div>
+                        </div>
+                        <div class="we_tile card_animate">
+                            <div class="we_tile_img">
+                                <img src="images/team/female user.png" alt="">
+                                <div class="we_tile_image_overlay">
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/sabrinarahman.supta"><i
+                                                    class="fa-brands fa-facebook"></i></a></li>
+                                        <li><a href="https://wa.me/+8801794102071" target="_blank"><i
+                                                    class="fa-brands fa-whatsapp"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="we_tile_details">
+                                <h2>রহিমা আক্তার</h2>
+                                <h3>কম্পিউটার ডিপার্টমেন্ট (৬ষ্ঠ)</h3>
+                                <p>৭৫৩৬০৫ | ১৫০২২৭৬৩৮৯</p>
+                            </div>
+                        </div>
+                        <div class="we_tile card_animate">
+                            <div class="we_tile_img">
+                                <img src="images/team/bullet.jpeg" alt="">
+                                <div class="we_tile_image_overlay">
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/share/1DGXJgeAAC/"><i
+                                                    class="fa-brands fa-facebook"></i></a></li>
+                                        <li><a href="https://wa.me/+8801782055477" target="_blank"><i
+                                                    class="fa-brands fa-whatsapp"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="we_tile_details">
+                                <h2>বিশ্বজিৎ বুলেট দেবশর্মা</h2>
+                                <h3>কম্পিউটার ডিপার্টমেন্ট (৬ষ্ঠ)</h3>
+                                <p>৬৫৫২৩৬ | ১৫০২২০৩৪৯২</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about us end -->
+
+    <!-- contact us start -->
+    <section id="contact_us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="contact_wrapper">
+                        <div class="contact_header">
+                            <h3>আমাদের সঙ্গে যুক্ত থাকুন</h3>
+                            <p>আমাদের IoT প্লান্ট ওয়াটারিং সিস্টেম সম্পর্কে কোনো প্রশ্ন আছে বা আরও জানতে চান? আমরা
+                                আপনার কাছ থেকে শুনতে আগ্রহী!</p>
+                        </div>
+                        <div class="contact_tiles">
+                            <div class="contact_tile">
+                                <div class="contact_tile_icon">
+                                    <img src="images/icon/email.png" alt="">
+                                </div>
+                                <div class="contact_tile_details">
+                                    <h3>ই-মেইল</h3>
+                                    <p>squadxtech@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="contact_tile">
+                                <div class="contact_tile_icon">
+                                    <img src="images/icon/call.png" alt="">
+                                </div>
+                                <div class="contact_tile_details">
+                                    <h3>ফোন নাম্বার</h3>
+                                    <p>+880 1954691305</p>
+                                </div>
+                            </div>
+                            <div class="contact_tile">
+                                <div class="contact_tile_icon">
+                                    <img src="images/icon/location.png" alt="">
+                                </div>
+                                <div class="contact_tile_details">
+                                    <h3>ঠিকানা</h3>
+                                    <p>মোহাম্মাদপুর, ঢাকা - ১২০৫</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact_btn">
+                            <a href="https://wa.me/01954691305" target="_blank">যোগাযোগ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- contact us end -->
+
+    <!-- footer start -->
+    <footer>
+        <div class="container">
+            <div class="footer_wrapper">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="footer_logo">
+                            <a href="#"><img src="images/icon/aquabot-logo-black.png" alt=""></a>
+                            <p>টেকসই উদ্ভিদ পরিচর্যা ও আধুনিক কৃষির জন্য আমাদের স্মার্ট IoT প্রযুক্তি</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="important_link">
+                            <div class="footer_header">
+                                <h3>গুরুত্বপূর্ণ লিংক</h3>
+                            </div>
+                            <div class="footer_link">
+                                <ul>
+                                    <li><a href="#nav">হোম</a></li>
+                                    <li><a href="#idea">ধারণা</a></li>
+                                    <li><a href="#how_it_works">কাজ করার পদ্ধতি</a></li>
+                                    <li><a href="#use_case">ব্যবহার ক্ষেত্র</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="important_link">
+                            <div class="footer_header">
+                                <h3>রিসোর্সসমূহ</h3>
+                            </div>
+                            <div class="footer_link">
+                                <ul>
+                                    <li><a href="#components">কম্পোনেন্টস</a></li>
+                                    <li><a href="#about_us">আমাদের সম্পর্কে</a></li>
+                                    <li><a href="#ai_qa">প্ল্যান্ট এসিস্ট্যান্ট</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="footer_contact">
+                            <div class="footer_header">
+                                <h3>আমাদের সাথে যুক্ত থাকুন</h3>
+                            </div>
+                            <div class="footer_icon">
+                                <ul>
+                                    <li><a href="https://www.facebook.com/ahshan.hafiz.com.bd"><i
+                                                class="fa-brands fa-facebook"></i></a></li>
+                                    <li><a href="https://wa.me/01954691305" target="_blank"><i
+                                                class="fa-brands fa-whatsapp"></i></a></li>
+                                    <li><a href="https://github.com/Fuadhafiz999"><i
+                                                class="fa-brands fa-github"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="footer_details">
+                                <p>অটোমেশন ও গাছ প্রেমিদের কমিউনিটিতে আপনাকে স্বাগত।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- credit start -->
+    <section id="credit">
+        <p>এই ওয়েবসাইটটি তৈরি করেছেন BCI Engineering Institute এর কম্পিউটার ডিপার্টমেন্টের ছাত্র-ছাত্রীরা</p>
+    </section>
+    <!-- credit end -->
+
+    <!-- click to top srart -->
+    <button id="topBtn" title="Go to top">
+        &#8679;
+    </button>
+    <!-- click to top end -->
+
+    <!-- script for idea section slider  start-->
+    <script>
+        let cards = document.querySelectorAll('.idea_card');
+        let iDots = document.querySelectorAll('.i_dot');
+        let currentIdx = 0;
+
+        function updateCards() {
+            cards.forEach(card => card.classList.remove('active', 'prev', 'next'));
+            iDots.forEach(dot => dot.classList.remove('active'));
+
+            let prevIdx = currentIdx - 1;
+            if (prevIdx < 0) prevIdx = cards.length - 1;
+
+            let nextIdx = currentIdx + 1;
+            if (nextIdx >= cards.length) nextIdx = 0;
+
+            cards[currentIdx].classList.add('active');
+            cards[prevIdx].classList.add('prev');
+            cards[nextIdx].classList.add('next');
+            iDots[currentIdx].classList.add('active');
+        }
+
+        function rotateCards(direction) {
+            if (direction === 1) {
+                currentIdx++;
+                if (currentIdx >= cards.length) currentIdx = 0;
+            } else {
+                currentIdx--;
+                if (currentIdx < 0) currentIdx = cards.length - 1;
+            }
+            updateCards();
+        }
+
+        function jumpToCard(index) {
+            currentIdx = index;
+            updateCards();
+        }
+
+        updateCards();
+    </script>
+    <!-- script for idea section slider  end-->
+
+    <!-- click to top script start -->
+    <script>
+        let mybutton = document.getElementById("topBtn");
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+        mybutton.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+    <!-- click to top script end -->
+
+    <!-- slider script start -->
+    <script>
+        let slides = document.querySelectorAll('.slide');
+        let dots = document.querySelectorAll('.dot');
+        let index = 1;
+        function updateSlider() {
+            slides.forEach(slide => {
+                slide.classList.remove('active', 'prev', 'next');
+            });
+            dots.forEach(dot => dot.classList.remove('active'));
+            if (index >= slides.length) index = 0;
+            if (index < 0) index = slides.length - 1;
+            let prevIndex = index - 1;
+            if (prevIndex < 0) prevIndex = slides.length - 1;
+            let nextIndex = index + 1;
+            if (nextIndex >= slides.length) nextIndex = 0;
+            slides[index].classList.add('active');
+            slides[prevIndex].classList.add('prev');
+            slides[nextIndex].classList.add('next');
+            dots[index].classList.add('active');
+        }
+        function moveSlide(n) {
+            index += n;
+            updateSlider();
+        }
+        function currentSlide(n) {
+            index = n;
+            updateSlider();
+        }
+        updateSlider();
+    </script>
+    <!-- slider script start -->
+
+    <!-- links script start -->
+    <script src="js/ai.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+    <!-- links script end -->
+
+</body>
+
+</html>
